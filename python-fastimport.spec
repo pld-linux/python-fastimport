@@ -7,13 +7,13 @@
 %define		module_name	fastimport
 Summary:	Python parser for fastimport (VCS interchange format)
 Name:		python-%{module_name}
-Version:	0.9.1
+Version:	0.9.2
 Release:	1
 License:	GPL v2+
 Group:		Development/Languages
 URL:		https://launchpad.net/python-fastimport
 Source0:	http://launchpad.net/python-fastimport/trunk/%{version}/+download/%{module_name}-%{version}.tar.gz
-# Source0-md5:	0c53dcce7ac4df8f1d4df436081b01bd
+# Source0-md5:	68972ad820785ec3247ec7bad0bfa6ea
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	python-distribute
 BuildRequires:	python-nose
@@ -26,7 +26,7 @@ This is the Python parser that was originally developed for
 bzr-fastimport, but extracted so it can be used by other projects.
 
 %prep
-%setup -q -n %{module_name}-%{version}
+%setup -q
 
 %build
 %{__python} setup.py build
