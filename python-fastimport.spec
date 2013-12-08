@@ -4,20 +4,20 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 
-%define		module_name	fastimport
+%define		module	fastimport
 Summary:	Python parser for fastimport (VCS interchange format)
-Name:		python-%{module_name}
+Name:		python-%{module}
 Version:	0.9.2
 Release:	1
 License:	GPL v2+
 Group:		Development/Languages
-URL:		https://launchpad.net/python-fastimport
-Source0:	http://launchpad.net/python-fastimport/trunk/%{version}/+download/%{module_name}-%{version}.tar.gz
+Source0:	http://launchpad.net/python-fastimport/trunk/%{version}/+download/%{module}-%{version}.tar.gz
 # Source0-md5:	68972ad820785ec3247ec7bad0bfa6ea
-BuildRequires:	rpmbuild(macros) >= 1.219
+URL:		https://launchpad.net/python-fastimport
 BuildRequires:	python-distribute
 BuildRequires:	python-nose
 BuildRequires:	python-testtools
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,10 +39,10 @@ rm -rf $RPM_BUILD_ROOT
 	--root $RPM_BUILD_ROOT
 
 %if %{with tests}
-PYTHONPATH=$RPM_BUILD_ROOT%{py_sitescriptdir} nosetests-%{py_ver} %{module_name}
+PYTHONPATH=$RPM_BUILD_ROOT%{py_sitescriptdir} nosetests-%{py_ver} %{module}
 %endif
 
-%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module_name}/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/tests
 
 %py_postclean
 
@@ -52,8 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS
-%dir %{py_sitescriptdir}/%{module_name}
-%{py_sitescriptdir}/%{module_name}/*.py[co]
-%dir %{py_sitescriptdir}/%{module_name}/processors
-%{py_sitescriptdir}/%{module_name}/processors/*.py[co]
-%{py_sitescriptdir}/%{module_name}-*.egg-info
+%dir %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/processors
+%{py_sitescriptdir}/%{module}/processors/*.py[co]
+%{py_sitescriptdir}/%{module}-*.egg-info
