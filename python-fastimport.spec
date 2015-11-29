@@ -17,7 +17,7 @@ URL:		https://launchpad.net/python-fastimport
 BuildRequires:	python-distribute
 BuildRequires:	python-nose
 BuildRequires:	python-testtools
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
