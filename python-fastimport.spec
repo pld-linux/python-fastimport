@@ -8,7 +8,7 @@
 Summary:	Python parser for fastimport (VCS interchange format)
 Name:		python-%{module}
 Version:	0.9.2
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://launchpad.net/python-fastimport/trunk/%{version}/+download/%{module}-%{version}.tar.gz
